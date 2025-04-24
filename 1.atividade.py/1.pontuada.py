@@ -27,19 +27,19 @@ def salariando(salario):
     return min(desconto_inss, 1051.05) 
        
 desconto_inss = salariando(salario_base)
-
+print(f"Desconto INSS: {desconto_inss:.2f}")
 
 def impostando(salario, dependente):
     deducao_dependente = 189.59 * dependente
     salario_irrf = salario - deducao_dependente
    
-    if 2112.01 <= salario_irrf <= 2826.65:
+    if 2112.01 >= salario_irrf <= 2826.65:
         desconto_irrf = salario_irrf * 0.075
     elif 2826.66 <= salario_irrf <= 3544.00:
         desconto_irrf = salario_irrf * 0.15
-    elif 3544.01 <= salario_irrf <= 4256.00:
+    elif 3544.01 <= salario_irrf < 4256.00:
         desconto_irrf = salario_irrf * 0.225
-    elif salario_irrf > 4256.00:
+    elif salario_irrf >= 4256.00:
         desconto_irrf = salario_irrf * 0.275
     return desconto_irrf
 
@@ -52,7 +52,7 @@ if vale == 's':
     transporte = salario_base * 0.06
         
     
-valor_vale_refeicao = float(input("Digite o valor do vale reição fornecido pela empresa: R$"))
+valor_vale_refeicao = float(input("Digite o valor do vale refeição fornecido pela empresa: R$"))
 vale_refeicao = valor_vale_refeicao * 0.20
 
 
